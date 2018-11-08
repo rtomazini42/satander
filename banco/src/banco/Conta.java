@@ -10,7 +10,24 @@ public class Conta {
 			this.saldo = 0.0;
 			this.nome = "User";
 			this.agencia = 123;
-			this.numero = 00000;
+			this.numero = 0000;
+		}
+		
+		public Conta(int numero,double saldo) {
+			this.numero = numero;
+			this.saldo = saldo;
+		}
+		public void creditar(double valor) {
+			this.saldo = this.saldo + valor;
+			
+		}
+		public void debitar(double valor) {
+			this.saldo = this.saldo - valor;
+			
+		}
+		public void transferir(Conta contaDestino, double valor) {
+			this.debitar(valor);
+			contaDestino.creditar(valor);
 		}
 
 		public double getSaldo() {
