@@ -13,10 +13,7 @@ public class Conta {
 			this.numero = 0000;
 		}
 		
-		public Conta(int numero,double saldo) {
-			this.numero = numero;
-			this.saldo = saldo;
-		}
+
 		public void creditar(double valor) {
 			this.saldo = this.saldo + valor;
 			
@@ -29,6 +26,8 @@ public class Conta {
 			this.debitar(valor);
 			contaDestino.creditar(valor);
 		}
+		
+		
 
 		public double getSaldo() {
 			return saldo;
