@@ -8,21 +8,30 @@ public class Conta extends ContaAbstrata{
 			
 		}
 	
-	public void sacar(double valor){
+	public boolean sacar(double valor){
 		if(getSaldo()> valor){
 			System.out.println("Saldo Suficiente");
 			debitar(valor);
+			return true;
 		} else{
 			System.out.println("Saldo Insuficiente, valor não retirado");
+			return false;
 		}
 	}
 	
 		
 				
-		//public void transferir(Conta contaDestino, double valor) {
-		//	this.debitar(valor);
-		//	contaDestino.creditar(valor);
-		//}
+		public void transferir(Conta contaDestino, double valor) {
+			if (sacar(valor) == true){
+				System.out.println("Transferindo para" + contaDestino.getNome());
+				contaDestino.creditar(valor);
+			}else{
+				System.out.println("Não tem saldo para transferencia");
+			}
+			
+		}
+		
+		
 	public int getAgencia() {
 		return agencia;
 	}
