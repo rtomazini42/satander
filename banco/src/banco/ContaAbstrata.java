@@ -4,18 +4,32 @@ public abstract class ContaAbstrata {
 	private double saldo;
 	private int numero;
 	private String nome;
+	private int agencia = 343;
 	
-
+	public boolean sacar(double valor){
+		if(getSaldo()> valor){
+			System.out.println("Saldo Suficiente");
+			this.setSaldo(getSaldo() - valor);
+			return true;
+		} else{
+			System.out.println("Saldo Insuficiente");
+			return false;
+		}
+	}
+	
+	
+	public void debitar(double valor) {
+		
+		sacar(valor);
+		
+	}
+	
 	public void creditar(double valor) {
 		this.setSaldo(getSaldo() + valor);
 		
 	}
 	
-	public abstract void debitar(double valor);
-	
-	public void renderJuros(double juros) {
-		this.saldo = this.saldo * juros;
-	}
+
 	public double getSaldo() {
 		return saldo;
 	}
@@ -33,6 +47,10 @@ public abstract class ContaAbstrata {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public int getAgencia() {
+		return(agencia);
 	}
 
 }
