@@ -8,7 +8,8 @@ public abstract class ContaAbstrata {
 	
 	public boolean sacar(double valor){
 		if(getSaldo()> valor){
-			System.out.println("Saldo Suficiente");
+			System.out.print("Saldo Suficiente ");
+			System.out.println("Retirando " + valor);
 			this.setSaldo(getSaldo() - valor);
 			return true;
 		} else{
@@ -19,7 +20,7 @@ public abstract class ContaAbstrata {
 	
 	
 	public void debitar(double valor) {
-		
+	
 		sacar(valor);
 		
 	}
