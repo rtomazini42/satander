@@ -14,22 +14,22 @@ public class Conta extends ContaAbstrata{
 			debitar(valor);
 			return true;
 		} else{
-			System.out.println("Saldo Insuficiente, valor não retirado");
+			System.out.println("Saldo Insuficiente");
 			return false;
 		}
 	}
 	
 		
 				
-		public void transferir(Conta contaDestino, double valor) {
-			if (sacar(valor) == true){
-				System.out.println("Transferindo para" + contaDestino.getNome());
-				contaDestino.creditar(valor);
-			}else{
-				System.out.println("Não tem saldo para transferencia");
-			}
-			
+	public void transferir(Conta contaDestino, double valor) {
+		if (sacar(valor) == true){
+			System.out.println("Transferindo para" + contaDestino.getNome());
+			contaDestino.creditar(valor);
+		}else{
+			System.out.println("Não tem saldo para transferencia");
 		}
+			
+	}
 		
 		
 	public int getAgencia() {
