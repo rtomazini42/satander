@@ -8,6 +8,15 @@ public class Conta extends ContaAbstrata{
 			
 		}
 	
+	public void sacar(double valor){
+		if(getSaldo()> valor){
+			System.out.println("Saldo Suficiente");
+			debitar(valor);
+		} else{
+			System.out.println("Saldo Insuficiente, valor não retirado");
+		}
+	}
+	
 		
 				
 		//public void transferir(Conta contaDestino, double valor) {
