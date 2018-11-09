@@ -5,10 +5,12 @@ public abstract class ContaAbstrata {
 	private int numero;
 	private String nome;
 	
+
 	public void creditar(double valor) {
-		this.saldo = this.saldo + valor;
+		this.setSaldo(getSaldo() + valor);
 		
 	}
+	
 	public abstract void debitar(double valor);
 	
 	public void renderJuros(double juros) {
@@ -32,4 +34,5 @@ public abstract class ContaAbstrata {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 }

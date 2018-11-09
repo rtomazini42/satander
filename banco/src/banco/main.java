@@ -12,6 +12,7 @@ public class main {
 		System.out.println(conta1.getSaldo());
 		conta1.renderJuros(1.07);
 		System.out.println(conta1.getSaldo());
+		System.out.println(conta1.getAgencia());
 	}
 
 }
