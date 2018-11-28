@@ -2,10 +2,14 @@ package banco;
 
 public abstract class ContaAbstrata {
 	private double saldo;
-	private int numero;
+	public int numero;
 	private String nome;
 	private int agencia = 343;
+
 	
+	
+
+
 	public boolean sacar(double valor){
 		if(getSaldo()> valor){
 			System.out.print("Saldo Suficiente ");
@@ -39,9 +43,7 @@ public abstract class ContaAbstrata {
 	}
 	public int getNumero() {
 		return numero;
-	}
-	public void setNumero(int numero) {
-		this.numero = numero;
+
 	}
 	public String getNome() {
 		return nome;
